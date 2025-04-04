@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodRescue - Reduce Food Waste, Connect Communities</title>
+  <meta name="description" content="FoodRescue connects food donors with recipients to reduce food waste and help communities">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="home-page">
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <i class="fas fa-leaf"></i>
+          Food<span>Rescue</span>
+        </a>
+        
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="browse.html" class="nav-link auth-only">Browse Food</a></li>
+          <li><a href="my-listings.html" class="nav-link auth-only">My Listings</a></li>
+          <li><a href="messages.html" class="nav-link auth-only">Messages</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="auth.html" class="nav-link non-auth-only">Login / Register</a></li>
+          <li class="auth-only">
+            <a href="#" class="nav-link user-name"></a>
+          </li>
+          <li class="auth-only">
+            <a href="#" id="logout-btn" class="nav-link">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-container">
+      <h1 class="hero-title">
+        Reducing Food Waste, One <span>Connection</span> at a Time
+      </h1>
+      <p class="hero-description">
+        FoodRescue connects those with surplus food to those who need it. 
+        Join our community to share food, reduce waste, and help those in need.
+      </p>
+      <div class="hero-buttons">
+        <a href="auth.html" class="btn btn-primary btn-lg non-auth-only">
+          Get Started
+        </a>
+        <a href="browse.html" class="btn btn-primary btn-lg auth-only">
+          Browse Food
+        </a>
+        <a href="#how-it-works" class="btn btn-outline btn-lg">
+          Learn More
+        </a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">1,945</div>
+          <div class="stat-label">Kilograms of Food Saved</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">230+</div>
+          <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">120</div>
+          <div class="stat-label">Communities Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- How It Works Section -->
+  <section class="features" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How FoodRescue Works</h2>
+        <p class="section-description">
+          Our platform makes it easy to share surplus food with those who can use it, 
+          reducing waste and strengthening communities.
+        </p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h3 class="feature-title">List Your Food</h3>
+          <p class="feature-description">
+            Take a photo and share details about your surplus food items. Set your location and preferences.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="feature-title">Connect</h3>
+          <p class="feature-description">
+            Get notified when someone nearby is interested. Chat with them directly through our secure messaging system.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <h3 class="feature-title">Share</h3>
+          <p class="feature-description">
+            Arrange a pickup or dropoff. Transfer the food safely and mark the listing as completed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Food Categories Section -->
+  <section class="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Food Categories</h2>
+        <p class="section-description">
+          Browse food donations by category to find exactly what you need
+        </p>
+      </div>
+      
+      <div class="categories-grid" id="categories-container">
+        <!-- Categories will be populated by JavaScript -->
+      </div>
+      
+      <div class="view-all">
+        <a href="browse.html" class="btn btn-outline">
+          View All Categories
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Listings Section -->
+  <section class="featured-listings">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Food Listings</h2>
+        <p class="section-description">
+          Check out these recently added food items available in your community
+        </p>
+      </div>
+      
+      <div class="listings-grid" id="listings-container">
+        <!-- Listings will be populated by JavaScript -->
+      </div>
+      
+      <div class="view-all">
+        <a href="browse.html" class="btn btn-primary">
+          Browse All Listings
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">
+            <i class="fas fa-leaf"></i>
+            Food<span>Rescue</span>
+          </div>
+          <p class="footer-description">
+            Connecting food donors with recipients to reduce waste and help communities
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="about.html" class="footer-link">Our Mission</a></li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Help Center</a></li>
+            <li><a href="#" class="footer-link">Food Safety</a></li>
+            <li><a href="#" class="footer-link">Community Guidelines</a></li>
+            <li><a href="#" class="footer-link">Success Stories</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Connect</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; <script>document.write(new Date().getFullYear())</script> FoodRescue. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - FoodRescue</title>
+  <meta name="description" content="Learn about FoodRescue, our mission, team, and values">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="about-page">
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <i class="fas fa-leaf"></i>
+          Food<span>Rescue</span>
+        </a>
+        
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="browse.html" class="nav-link auth-only">Browse Food</a></li>
+          <li><a href="my-listings.html" class="nav-link auth-only">My Listings</a></li>
+          <li><a href="messages.html" class="nav-link auth-only">Messages</a></li>
+          <li><a href="about.html" class="nav-link active">About Us</a></li>
+          <li><a href="auth.html" class="nav-link non-auth-only">Login / Register</a></li>
+          <li class="auth-only">
+            <a href="#" class="nav-link user-name"></a>
+          </li>
+          <li class="auth-only">
+            <a href="#" id="logout-btn" class="nav-link">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- About Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <h1 class="section-title">
+        About <span style="color: var(--primary-color);">FoodRescue</span>
+      </h1>
+      <p class="section-description">
+        We're on a mission to reduce food waste and strengthen communities by 
+        connecting those with surplus food to those who need it.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Mission Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-row">
+        <div class="about-content">
+          <h2 class="about-title">Our Mission</h2>
+          <p class="about-text">
+            FoodRescue was born from a simple observation: while millions struggle with food insecurity,
+            a third of all food produced is wasted. We believe technology can help bridge this gap.
+          </p>
+          <p class="about-text">
+            Our platform makes it easy for individuals, businesses, and organizations to share
+            surplus food with those who can use it, creating a more sustainable and equitable food system.
+          </p>
+          <p class="about-text">
+            By fostering direct connections between food donors and recipients,
+            we're building stronger communities and reducing the environmental impact of food waste.
+          </p>
+        </div>
+        <div class="about-icon">
+          <div class="about-icon-circle">
+            <i class="fas fa-leaf fa-3x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Team Section -->
+  <section class="about-section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-description">
+          Meet the dedicated individuals behind FoodRescue who are working to create a more sustainable food system.
+        </p>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <h3 class="team-name">MOHAMMAD ADIL</h3>
+          <p class="team-role">Founder & Lead Developer</p>
+          <p class="team-bio">
+            Passionate about leveraging technology to solve social and environmental challenges.
+          </p>
+          <a href="mailto:contact@foodrescue.org" class="team-contact">
+            <i class="fas fa-envelope"></i>
+            Contact
+          </a>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-avatar">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <h3 class="team-name">SHAIK AMAAN ALI</h3>
+          <p class="team-role">Operations Director</p>
+          <p class="team-bio">
+            Expert in sustainable food systems with experience in community organizing and logistics.
+          </p>
+          <a href="mailto:contact@foodrescue.org" class="team-contact">
+            <i class="fas fa-envelope"></i>
+            Contact
+          </a>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-avatar">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <h3 class="team-name">SAYED KHAJA ARIFUDDIN</h3>
+          <p class="team-role">Community Manager</p>
+          <p class="team-bio">
+            Dedicated to building meaningful connections between food donors and recipients.
+          </p>
+          <a href="mailto:contact@foodrescue.org" class="team-contact">
+            <i class="fas fa-envelope"></i>
+            Contact
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Values Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Values</h2>
+        <p class="section-description">
+          These core principles guide everything we do at FoodRescue.
+        </p>
+      </div>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-leaf fa-2x"></i>
+          </div>
+          <h3 class="value-title">Sustainability</h3>
+          <p class="value-text">
+            We're committed to reducing food waste and its environmental impact through local sharing.
+          </p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-users fa-2x"></i>
+          </div>
+          <h3 class="value-title">Community</h3>
+          <p class="value-text">
+            We believe in the power of local connections to create resilient and supportive communities.
+          </p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-universal-access fa-2x"></i>
+          </div>
+          <h3 class="value-title">Accessibility</h3>
+          <p class="value-text">
+            We strive to make our platform easy to use and accessible to everyone in the community.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Join Us CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Join Our Mission</h2>
+      <p class="cta-text">
+        Ready to help reduce food waste in your community? Create an account today and start sharing or requesting food items.
+      </p>
+      <a href="auth.html" class="btn btn-primary btn-lg">
+        Get Started
+      </a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">
+            <i class="fas fa-leaf"></i>
+            Food<span>Rescue</span>
+          </div>
+          <p class="footer-description">
+            Connecting food donors with recipients to reduce waste and help communities
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="about.html" class="footer-link">Our Mission</a></li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Help Center</a></li>
+            <li><a href="#" class="footer-link">Food Safety</a></li>
+            <li><a href="#" class="footer-link">Community Guidelines</a></li>
+            <li><a href="#" class="footer-link">Success Stories</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Connect</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; <script>document.write(new Date().getFullYear())</script> FoodRescue. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login or Register - FoodRescue</title>
+  <meta name="description" content="Sign in or create an account to join the FoodRescue community">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="auth-page">
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <i class="fas fa-leaf"></i>
+          Food<span>Rescue</span>
+        </a>
+        
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="browse.html" class="nav-link auth-only">Browse Food</a></li>
+          <li><a href="my-listings.html" class="nav-link auth-only">My Listings</a></li>
+          <li><a href="messages.html" class="nav-link auth-only">Messages</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="auth.html" class="nav-link active non-auth-only">Login / Register</a></li>
+          <li class="auth-only">
+            <a href="#" class="nav-link user-name"></a>
+          </li>
+          <li class="auth-only">
+            <a href="#" id="logout-btn" class="nav-link">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Auth Page Content -->
+  <main class="auth-page">
+    <div class="auth-form-container">
+      <div class="auth-tabs">
+        <div class="auth-tab active" id="login-tab">Login</div>
+        <div class="auth-tab" id="register-tab">Register</div>
+      </div>
+      
+      <!-- Login Form -->
+      <form class="auth-form" id="login-form">
+        <div class="form-group">
+          <label for="login-email" class="form-label">Email</label>
+          <input type="email" id="login-email" name="email" class="form-input" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="login-password" class="form-label">Password</label>
+          <input type="password" id="login-password" name="password" class="form-input" placeholder="Enter your password" required>
+        </div>
+        
+        <button type="submit" class="form-button">Login</button>
+        
+        <div class="auth-divider">
+          <span class="auth-divider-text">OR</span>
+        </div>
+        
+        <div class="auth-social">
+          <button type="button" class="auth-social-button">
+            <i class="fab fa-google"></i>
+            Google
+          </button>
+          <button type="button" class="auth-social-button">
+            <i class="fab fa-facebook-f"></i>
+            Facebook
+          </button>
+        </div>
+        
+        <p class="auth-footer">
+          Don't have an account? <a href="#" id="show-register">Register</a>
+        </p>
+      </form>
+      
+      <!-- Register Form -->
+      <form class="auth-form" id="register-form" style="display: none;">
+        <div class="form-group">
+          <label for="register-name" class="form-label">Full Name</label>
+          <input type="text" id="register-name" name="fullName" class="form-input" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="register-email" class="form-label">Email</label>
+          <input type="email" id="register-email" name="email" class="form-input" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="register-password" class="form-label">Password</label>
+          <input type="password" id="register-password" name="password" class="form-input" placeholder="Create a password (min. 8 characters)" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="register-zipcode" class="form-label">ZIP Code</label>
+          <input type="text" id="register-zipcode" name="zipCode" class="form-input" placeholder="Enter your ZIP code" required>
+        </div>
+        
+        <button type="submit" class="form-button">Create Account</button>
+        
+        <div class="auth-divider">
+          <span class="auth-divider-text">OR</span>
+        </div>
+        
+        <div class="auth-social">
+          <button type="button" class="auth-social-button">
+            <i class="fab fa-google"></i>
+            Google
+          </button>
+          <button type="button" class="auth-social-button">
+            <i class="fab fa-facebook-f"></i>
+            Facebook
+          </button>
+        </div>
+        
+        <p class="auth-footer">
+          Already have an account? <a href="#" id="show-login">Login</a>
+        </p>
+      </form>
+    </div>
+    
+    <!-- Auth Hero Section -->
+    <div class="auth-hero">
+      <h2 class="auth-hero-title">
+        Join the Food<span>Rescue</span> Community
+      </h2>
+      <p class="auth-hero-description">
+        Connect with neighbors, share surplus food, and help reduce waste in your community.
+      </p>
+      
+      <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=400&h=250&q=80" alt="Food sharing" style="max-width: 100%; border-radius: 8px; margin: 1rem 0;">
+      
+      <div class="auth-features">
+        <div class="auth-feature">
+          <i class="fas fa-check-circle auth-feature-icon"></i>
+          <span class="auth-feature-text">Share surplus food with those who need it</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fas fa-check-circle auth-feature-icon"></i>
+          <span class="auth-feature-text">Find available food in your area</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fas fa-check-circle auth-feature-icon"></i>
+          <span class="auth-feature-text">Connect with your local community</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fas fa-check-circle auth-feature-icon"></i>
+          <span class="auth-feature-text">Help reduce food waste</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">
+            <i class="fas fa-leaf"></i>
+            Food<span>Rescue</span>
+          </div>
+          <p class="footer-description">
+            Connecting food donors with recipients to reduce waste and help communities
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="about.html" class="footer-link">Our Mission</a></li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Help Center</a></li>
+            <li><a href="#" class="footer-link">Food Safety</a></li>
+            <li><a href="#" class="footer-link">Community Guidelines</a></li>
+            <li><a href="#" class="footer-link">Success Stories</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Connect</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; <script>document.write(new Date().getFullYear())</script> FoodRescue. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Food Listings - FoodRescue</title>
+  <meta name="description" content="Find available food donations in your area">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="browse-page">
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <i class="fas fa-leaf"></i>
+          Food<span>Rescue</span>
+        </a>
+        
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="browse.html" class="nav-link active auth-only">Browse Food</a></li>
+          <li><a href="my-listings.html" class="nav-link auth-only">My Listings</a></li>
+          <li><a href="messages.html" class="nav-link auth-only">Messages</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="auth.html" class="nav-link non-auth-only">Login / Register</a></li>
+          <li class="auth-only">
+            <a href="#" class="nav-link user-name"></a>
+          </li>
+          <li class="auth-only">
+            <a href="#" id="logout-btn" class="nav-link">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Browse Header -->
+  <section class="browse-header">
+    <div class="container">
+      <h1 class="section-title">Browse Food Listings</h1>
+      <p class="section-description">
+        Find available food donations in your area
+      </p>
+      
+      <div class="browse-filters">
+        <div class="filter-item">
+          <label for="category-filter">Category</label>
+          <select id="category-filter" class="form-input">
+            <option value="">All Categories</option>
+            <option value="fruits_vegetables">Fruits & Vegetables</option>
+            <option value="bakery">Bakery Items</option>
+            <option value="dairy_eggs">Dairy & Eggs</option>
+            <option value="meat_fish">Meat & Fish</option>
+            <option value="prepared_foods">Prepared Foods</option>
+            <option value="pantry_items">Pantry Items</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="filter-item">
+          <label for="zipcode-filter">ZIP Code</label>
+          <input type="text" id="zipcode-filter" class="form-input" placeholder="Enter ZIP code">
+        </div>
+        
+        <div class="filter-item">
+          <label for="freshness-filter">Freshness</label>
+          <select id="freshness-filter" class="form-input">
+            <option value="">All</option>
+            <option value="fresh">Fresh</option>
+            <option value="expiring_soon">Expiring Soon</option>
+          </select>
+        </div>
+        
+        <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Browse Listings -->
+  <section class="browse-listings">
+    <div class="container">
+      <div class="listings-grid" id="browse-listings-container">
+        <!-- Listings will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">
+            <i class="fas fa-leaf"></i>
+            Food<span>Rescue</span>
+          </div>
+          <p class="footer-description">
+            Connecting food donors with recipients to reduce waste and help communities
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="about.html" class="footer-link">Our Mission</a></li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Help Center</a></li>
+            <li><a href="#" class="footer-link">Food Safety</a></li>
+            <li><a href="#" class="footer-link">Community Guidelines</a></li>
+            <li><a href="#" class="footer-link">Success Stories</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-heading">Connect</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; <script>document.write(new Date().getFullYear())</script> FoodRescue. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
